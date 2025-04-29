@@ -13,7 +13,7 @@ public class PrimeiraPaginaController {
     @GetMapping("primeira")
     public String primeiraPaginaHtml(Model model) {
         model.addAttribute("mensagemDaController",
-                "Primeira mensagem do controller");
+                "Insira os dados abaixo:");
         return "primeiraPagina";
     }
 
@@ -26,5 +26,4 @@ public class PrimeiraPaginaController {
         return "candidate/info";
     }
     record Criar(String nome, String email, String usuario) {}
-}
 }

@@ -1,20 +1,35 @@
 <!doctype html>
-<html lang="pt-BR">
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Primeria Página Teste thymeleaf</title>
+    <title>Primeira Página</title>
+    <!-- Descomente o Tailwind se quiser usar -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" th:href="@{/css/estilo.css}" type="text/css" media="all">
 </head>
 <body>
-<p th:text="${mensagemDaController}"></p>
-Nome: <input type="text" name="nome"/>
-<br/>
-Email: <input type="text" name="email"/>
-<br/>
-Usuario: <input type="text" name="usuario"/>
-<br/>
-<button>Cadastrar Usuario</button>
-</form>
+    <div>
+        <h2>Bem-vindo</h2>
+        <br>
+        <p id="teste">Mensagem inicial:</p>
+        <p th:text="${mensagemDaController}">Mensagem vinda do controller</p>
+
+        <form th:action="@{/criar}" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome">
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email">
+            <br><br>
+
+            <label for="usuario">Usuário:</label>
+            <input type="text" name="usuario" id="usuario">
+            <br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
 </body>
 </html>
